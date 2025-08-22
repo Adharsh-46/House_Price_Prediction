@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>House Price Logo Animation</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #121212;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    svg {
+      width: 120px;
+      height: 120px;
+      stroke: white;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .house-outline {
+      stroke-dasharray: 300;
+      stroke-dashoffset: 300;
+      animation: drawHouse 2s ease forwards;
+    }
+
+    .price-line {
+      stroke: #00f5c9;
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      animation: drawLine 2s 2s ease forwards;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeText 1s 4s ease forwards;
+    }
+
+    @keyframes drawHouse {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes drawLine {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes fadeText {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo-container">
+    <svg viewBox="0 0 100 100">
+      <!-- House Base -->
+      <path class="house-outline" d="M20 60 L50 30 L80 60" />
+      <rect class="house-outline" x="30" y="60" width="40" height="30" />
+
+      <!-- Price Line -->
+      <polyline class="price-line" points="30,85 45,70 60,75 75,55" />
+    </svg>
+    <div class="logo-text">House Price Predictor</div>
+  </div>
+
+</body>
+</html>
