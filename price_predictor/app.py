@@ -10,7 +10,7 @@ if not hasattr(ct, "_RemainderColsList"):
         pass
     ct._RemainderColsList = _RemainderColsList
 
-model = joblib.load("house_price_model.joblib","rb")
+model = joblib.load(open("house_price_model.joblib","rb"))
 
 st.header("Hyderabad House Price Predictor")
 # Load your dataset for unique values
