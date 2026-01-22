@@ -1,4 +1,4 @@
-House Price Prediction Project
+#House Price Prediction Project
 
 This project applies Machine Learning to predict house prices based on multiple features such as area, number of bedrooms, location, and amenities. The system integrates a machine learning model with a web application for real-time predictions.
 
